@@ -14,11 +14,16 @@
       print('scheme = ' + scheme);  
       print('orderId = ' + orderId);  
 
+      // setTimeout(() => {
+      //   const url = scheme + '://orders?orderId=' + orderId;
+      //   print('Setting URL to ' + url);
+      //   window.location.href = url;
+      // }, 1000);
+
       setTimeout(() => {
-        const url = scheme + '://orders?orderId=' + orderId;
-        print('Setting URL to ' + url);
-        window.location.href = url;
+        window.close();
       }, 1000);
+
     });
   </script>
   <body>

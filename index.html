@@ -1,0 +1,27 @@
+<html>
+  <script>
+    function print(message) {
+      const info = document.createElement('p');
+      info.innerHTML = message;
+      document.body.append(info);
+    }
+
+    window.addEventListener('load', (event) => {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const scheme = urlParams.get('scheme');
+      const orderId = urlParams.get('orderId');
+      print('scheme = ' + scheme);  
+      print('orderId = ' + orderId);  
+
+      setTimeout(() => {
+        const url = scheme + '://orders?orderId=' + orderId;
+        print('Setting URL to ' + url);
+        window.location.href = url;
+      }, 1000);
+    });
+  </script>
+  <body>
+    redirect test
+  </body>
+</html>
